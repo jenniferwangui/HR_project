@@ -12,6 +12,7 @@ end
 # root 'leaves#leave'
   resources :leaves
   devise_for :users
+
  root 'pages#home'
 
   get "staff/employees" => "pages#staff", as: :staff
@@ -20,9 +21,9 @@ end
 
   get "blog/posts" => "pages#blog", as: :blog
 
-  get "login" => "pages#login", as: :login
+  get "login" => "login", as: :login
 
-
+ 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
