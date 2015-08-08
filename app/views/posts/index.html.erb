@@ -1,0 +1,44 @@
+<!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        <h1>HR Department</h1>
+        <p>Student no: x13121529</p>
+        <p>Student Name: Jennifer Mwangi</p>
+	<p class="text-center"><a href="http://github.com/jenniferwangui" target="_blank" class="btn btn-primary btn-lg">Show me the code</a></p>
+		</div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+<div class="alt1">
+	<div class="container">
+	<div class="row">
+	<div class="col-md-12">
+<h1 class="text-center">Welcome to HR_Blog</h1>
+
+
+
+
+<% @posts.each do |post| %>
+  <h2><%= link_to post.title, post %></h2>
+    <p>
+	<%= time_ago_in_words post.created_at %> ago
+	</p>
+   <p>
+	<%= truncate post.text %>
+	</p>
+  <% end %>
+
+	<p>
+	<%= link_to "New post", new_post_path %>
+</p>
+
+</div>
+</div>
+</div>
+</div>

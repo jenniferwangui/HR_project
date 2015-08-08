@@ -1,0 +1,18 @@
+
+<nav role="navigation">
+    <div class="inner">
+        <a href="#
+nav" class="nav-collapse" id="nav-collapse">Menu</a>
+        <ul class="nav" id="nav">
+	<ul class="nav navbar-nav navbar-right" >
+
+            <li><%= link_to "Home", root_path %></li>
+            <%= render 'devise/menu/registration_items' %>
+            <%= render 'devise/menu/login_items' %>
+	    <li><%= link_to "staff", employees_path %></li>
+            <li><%= link_to "leave", holidays_path %></li>
+	     <li><%= link_to "Blog", posts_path %></li>
+
+        </ul>
+    </div>
+</nav>

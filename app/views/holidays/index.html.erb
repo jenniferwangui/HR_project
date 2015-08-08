@@ -1,0 +1,72 @@
+<p id="notice"><%= notice %></p>
+
+
+
+<!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        <h1>HR Department</h1>
+        <p>Student no: x13121529</p>
+        <p>Student Name: Jennifer Mwangi</p>
+	<p class="text-center"><a href="http://github.com/jenniferwangui" target="_blank" class="btn btn-primary btn-lg">Show me the code</a></p>
+		</div>
+      </div>
+    </div>
+
+
+	<div class="alt1">
+	<div class="container">
+	<div class="row">
+	<div class="col-md-12">
+<h1 class="text-center">Listing Holidays</h1>
+
+	<h4>enter your name</h4>
+	<%= form_tag holidays_path, :method => 'get' do %>
+	  <%= text_field_tag :search, params[:search] %>
+	  <%= submit_tag "search" %>
+	<% end %>
+<br />
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+	<br />
+      <th>Department</th>
+      <th>Type</th>
+      <th>Startdate</th>
+      <th>Enddate</th>
+      <th>Phone</th>
+      <th>Details</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @holidays.each do |holiday| %>
+      <tr>
+        <td><%= holiday.name %></td>
+        <td><%= holiday.department %></td>
+        <td><%= holiday.type %></td>
+        <td><%= holiday.startDate %></td>
+        <td><%= holiday.endDate %></td>
+        <td><%= holiday.phone %></td>
+        <td><%= holiday.details %></td>
+        <td><%= link_to 'Show', holiday %></td>
+        <td><%= link_to 'Edit', edit_holiday_path(holiday) %></td>
+        <td><%= link_to 'Destroy', holiday, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<%= link_to 'New Holiday', new_holiday_path %>
+<br >
+<h5>FIELD TYPE: there is a problem with type field i donot know what happen its giving an error if you enter a word or
+ numbers, the best way is to leave it blank not to interfere with the rest of the fields which is working well.
+ I didn't want to replace the whole scaffold since it will intefere with the search button. Sorry for that. </h5>
+
+</div>
+</div>
+</div>
+</div>
